@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     {% seo %}
 </head>
-<body>
-    <header>
+<body class="terminal-theme">
+    <header class="site-header">
         <nav class="container">
-            <a href="/" class="logo">MLCurve</a>
+            <a href="/" class="logo">mlcurve<span class="cursor">_</span></a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog/">Blog</a></li>
@@ -19,9 +22,17 @@
         </nav>
     </header>
     
-    <main class="container">
-        {{ content }}
-    </main>
+    <div class="terminal-shell container">
+        <div class="terminal-meta">
+            <span>session: mlcurve-site</span>
+            <span>route: {{ page.url | default: '/' }}</span>
+            <span>status: online</span>
+        </div>
+        <main>
+            <p class="terminal-lead"><span class="prompt">$</span> render --page {{ page.title | downcase | replace: ' ', '-' }}</p>
+            {{ content }}
+        </main>
+    </div>
     
     <footer>
         <div class="container">
