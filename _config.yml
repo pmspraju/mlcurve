@@ -1,0 +1,35 @@
+# Site settings
+title: MLCurve
+description: Machine Learning Insights & Analysis
+url: "https://mlcurve.com"
+baseurl: ""
+
+# Author info
+author:
+  name: Your Name
+  email: your.email@example.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Permalink structure
+permalink: /blog/:year/:month/:day/:title/
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Exclude files
+exclude:
+  - README.md
+  - setup.sh
+  - newsletters/
+  - "*.py"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
