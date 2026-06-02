@@ -55,6 +55,35 @@ layout: post
 Your content here...
 ```
 
+### Notes (Auto-Discovery)
+
+Notes live in `_notes/` and are grouped automatically by front matter values.
+
+Recommended path pattern:
+
+- `_notes/<domain>/<topic>/<slug>.md`
+
+Required note front matter fields:
+
+```markdown
+---
+title: Your Note Title
+domain: ml
+topic: basics
+tags:
+   - example-tag
+updated: YYYY-MM-DD
+---
+```
+
+Normalization rules (important):
+
+- Use lowercase values for `domain` and `topic` (example: `ml`, `qc`, `basics`, `transformers`).
+- Use lowercase folder names in `_notes/`.
+- Use hyphenated lowercase filenames (`attention-mechanism.md`).
+
+The site groups topics case-insensitively, but using lowercase everywhere avoids accidental duplication and keeps URLs/content consistent.
+
 ## Deployment
 
 Push to main branch. GitHub Pages will automatically build and deploy.

@@ -33,3 +33,16 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+
+# Notes collection (evergreen content, separate from dated blog posts)
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
