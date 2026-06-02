@@ -112,36 +112,6 @@ main {
     overflow: hidden;
 }
 
-.terminal-shell::before {
-    content: '';
-    display: block;
-    height: 34px;
-    border-bottom: 1px solid var(--border);
-    background:
-        radial-gradient(circle at 22px 17px, #ff5f56 0 5px, transparent 6px),
-        radial-gradient(circle at 42px 17px, #ffbd2e 0 5px, transparent 6px),
-        radial-gradient(circle at 62px 17px, #27c93f 0 5px, transparent 6px),
-        linear-gradient(180deg, #11211a, #0d1a15);
-}
-
-.terminal-meta {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    font-size: 0.73rem;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    border-bottom: 1px solid var(--border);
-    padding: 0.7rem 1.2rem;
-    background: rgba(11, 20, 16, 0.75);
-}
-
-.terminal-meta span {
-    padding: 0.15rem 0.45rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-}
-
 .terminal-lead {
     margin-bottom: 1.7rem;
     color: var(--text-dim);

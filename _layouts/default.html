@@ -22,11 +22,6 @@
     </header>
     
     <div class="terminal-shell container">
-        <div class="terminal-meta">
-            <span>session: mlcurve-site</span>
-            <span>route: {{ page.url | default: '/' }}</span>
-            <span>status: online</span>
-        </div>
         <main>
             <p class="terminal-lead"><span class="prompt">$</span> render --page {{ page.title | downcase | replace: ' ', '-' }}</p>
             {{ content }}
