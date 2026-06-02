@@ -1,5 +1,5 @@
 ---
-title: Grover Algorithm Overview
+title: Grover's Algorithm Overview
 domain: qc
 topic: algorithms
 tags:
