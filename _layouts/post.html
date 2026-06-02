@@ -28,10 +28,10 @@ layout: default
 
 <div class="post-navigation">
     {% if page.previous.url %}
-    <a href="{{ page.previous.url }}" class="prev-post">← {{ page.previous.title }}</a>
+    <a href="{{ page.previous.url }}" class="prev-post" title="{{ page.previous.title }}"><-</a>
     {% endif %}
     
     {% if page.next.url %}
-    <a href="{{ page.next.url }}" class="next-post">{{ page.next.title }} →</a>
+    <a href="{{ page.next.url }}" class="next-post" title="{{ page.next.title }}">-></a>
     {% endif %}
 </div>
