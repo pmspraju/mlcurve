@@ -14,13 +14,19 @@ layout: default
             {% endif %}
             {% if page.domain and page.topic %}
             <span class="separator">•</span>
-            <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/{{ page.topic | slugify }}/">Back to list</a>
+            <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/{{ page.topic | slugify }}/" aria-label="Back to list">
+                <span aria-hidden="true">&#x2039;</span>
+            </a>
             {% elsif page.domain %}
             <span class="separator">•</span>
-            <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/">Back to list</a>
+            <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/" aria-label="Back to list">
+                <span aria-hidden="true">&#x2039;</span>
+            </a>
             {% else %}
             <span class="separator">•</span>
-            <a class="meta-back-link" href="/notes/">Back to list</a>
+            <a class="meta-back-link" href="/notes/" aria-label="Back to list">
+                <span aria-hidden="true">&#x2039;</span>
+            </a>
             {% endif %}
         </div>
         {% if page.tags and page.tags.size > 0 %}

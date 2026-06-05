@@ -236,13 +236,29 @@ hr {
 }
 
 .meta-back-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.35rem;
+    height: 1.35rem;
     color: var(--accent);
     text-decoration: none;
     font-family: 'Work Sans', 'Segoe UI', sans-serif;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(134, 168, 234, 0.08);
+    line-height: 1;
 }
 
 .meta-back-link:hover {
     color: var(--accent-strong);
+    border-color: rgba(171, 194, 242, 0.5);
+    background: rgba(134, 168, 234, 0.12);
+}
+
+.meta-back-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 .excerpt {
