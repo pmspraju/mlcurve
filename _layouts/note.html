@@ -12,11 +12,15 @@ layout: default
             <span class="separator">•</span>
             <span>{{ page.topic }}</span>
             {% endif %}
-            {% if page.updated %}
+            {% if page.domain and page.topic %}
             <span class="separator">•</span>
-            <time datetime="{{ page.updated | date_to_xmlschema }}">
-                updated {{ page.updated | date: "%B %d, %Y" }}
-            </time>
+            <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/{{ page.topic | slugify }}/">Back to list</a>
+            {% elsif page.domain %}
+            <span class="separator">•</span>
+            <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/">Back to list</a>
+            {% else %}
+            <span class="separator">•</span>
+            <a class="meta-back-link" href="/notes/">Back to list</a>
             {% endif %}
         </div>
         {% if page.tags and page.tags.size > 0 %}

@@ -235,6 +235,16 @@ hr {
     color: var(--accent-strong);
 }
 
+.meta-back-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'Work Sans', 'Segoe UI', sans-serif;
+}
+
+.meta-back-link:hover {
+    color: var(--accent-strong);
+}
+
 .excerpt {
     color: var(--text-dim);
     margin: 0.75rem 0;
