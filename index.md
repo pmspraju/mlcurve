@@ -33,7 +33,7 @@ title: Latest
 
 <div class="post-navigation">
     {% if latest.next.url %}
-    <a href="{{ latest.next.url }}" class="prev-post" title="Older post"><-</a>
+    <a href="{{ latest.next.url }}" class="prev-post" title="Older posts"><-</a>
     {% endif %}
 
     <a href="/blog/" class="next-post" title="Blog archive">-></a>
