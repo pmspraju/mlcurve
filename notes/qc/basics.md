@@ -4,8 +4,6 @@ title: QC Basics
 permalink: /notes/qc/basics/
 ---
 
-# QC / Basics
-
 <p class="breadcrumbs"><a href="/notes/">Notes</a> <span class="separator">/</span> <a href="/notes/qc/">QC</a> <span class="separator">/</span> <span>Basics</span></p>
 
 <div class="post-list">

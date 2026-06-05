@@ -4,8 +4,6 @@ title: ML Transformers
 permalink: /notes/ml/transformers/
 ---
 
-# ML / Transformers
-
 <p class="breadcrumbs"><a href="/notes/">Notes</a> <span class="separator">/</span> <a href="/notes/ml/">ML</a> <span class="separator">/</span> <span>Transformers</span></p>
 
 <div class="post-list">
