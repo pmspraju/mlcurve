@@ -15,17 +15,17 @@ layout: default
             {% if page.domain and page.topic %}
             <span class="separator">•</span>
             <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/{{ page.topic | slugify }}/" aria-label="Back to list">
-                <span aria-hidden="true">&#x2039;</span>
+                <span aria-hidden="true">&#x21A9;</span>
             </a>
             {% elsif page.domain %}
             <span class="separator">•</span>
             <a class="meta-back-link" href="/notes/{{ page.domain | downcase | strip }}/" aria-label="Back to list">
-                <span aria-hidden="true">&#x2039;</span>
+                <span aria-hidden="true">&#x21A9;</span>
             </a>
             {% else %}
             <span class="separator">•</span>
             <a class="meta-back-link" href="/notes/" aria-label="Back to list">
-                <span aria-hidden="true">&#x2039;</span>
+                <span aria-hidden="true">&#x21A9;</span>
             </a>
             {% endif %}
         </div>

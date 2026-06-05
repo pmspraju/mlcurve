@@ -239,8 +239,9 @@ hr {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.35rem;
-    height: 1.35rem;
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 1.05rem;
     color: var(--accent);
     text-decoration: none;
     font-family: 'Work Sans', 'Segoe UI', sans-serif;
