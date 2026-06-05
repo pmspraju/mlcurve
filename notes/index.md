@@ -23,20 +23,3 @@ Choose a domain to browse focused notes and references.
     </a>
 </article>
 </div>
-
-## All Notes
-
-<div class="post-list">
-{% assign sorted_notes = site.notes | sort: "title" %}
-{% for note in sorted_notes %}
-<article class="post-preview">
-    <a href="{{ note.url }}" class="post-preview-card" aria-label="Open note {{ note.title }}">
-        <h3>{{ note.title }}</h3>
-        <p class="post-meta">{{ note.domain | upcase }} • {{ note.topic }}</p>
-        {% if note.excerpt %}
-        <p class="excerpt">{{ note.excerpt | strip_html | truncatewords: 30 }}</p>
-        {% endif %}
-    </a>
-</article>
-{% endfor %}
-</div>
