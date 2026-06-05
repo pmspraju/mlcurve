@@ -3,9 +3,9 @@ title: Gradient Centralization
 domain: ml
 topic: regularization
 tags:
-	- regularization
-	- optimization
-	- gradients
+  - regularization
+  - optimization
+  - gradients
 updated: 2026-06-02
 ---
 
