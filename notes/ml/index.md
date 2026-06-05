@@ -25,8 +25,9 @@ permalink: /notes/ml/
 <div class="post-list">
 {% for topic in topic_keys %}
 <article class="post-preview">
-        <h3><a href="#topic-{{ topic | slugify }}">{{ topic | replace: "-", " " | capitalize }}</a></h3>
-        <a href="#topic-{{ topic | slugify }}" class="read-more">Open topic →</a>
+    <a href="#topic-{{ topic | slugify }}" class="post-preview-card" aria-label="Open topic {{ topic | replace: '-', ' ' | capitalize }}">
+        <h3>{{ topic | replace: "-", " " | capitalize }}</h3>
+    </a>
 </article>
 {% endfor %}
 </div>
@@ -46,11 +47,12 @@ permalink: /notes/ml/
     {% if note_domain == "ml" and note_topic == topic %}
         {% assign found = true %}
 <article class="post-preview">
-        <h3><a href="{{ note.url }}">{{ note.title }}</a></h3>
-        {% if note.excerpt %}
-        <p class="excerpt">{{ note.excerpt | strip_html | truncatewords: 30 }}</p>
-        {% endif %}
-        <a href="{{ note.url }}" class="read-more">Open note →</a>
+        <a href="{{ note.url }}" class="post-preview-card" aria-label="Open note {{ note.title }}">
+            <h3>{{ note.title }}</h3>
+            {% if note.excerpt %}
+            <p class="excerpt">{{ note.excerpt | strip_html | truncatewords: 30 }}</p>
+            {% endif %}
+        </a>
 </article>
     {% endif %}
 {% endfor %}

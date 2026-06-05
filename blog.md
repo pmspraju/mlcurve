@@ -8,15 +8,15 @@ permalink: /blog/
 
 {% for post in site.posts %}
 <article class="post-preview">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p class="post-meta">
-        {{ post.date | date: "%B %d, %Y" }}
-        {% if post.source %}• {{ post.source }}{% endif %}
-    </p>
-    {% if post.excerpt %}
-    <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-    {% endif %}
-    <a href="{{ post.url }}" class="read-more">Read more →</a>
+    <a href="{{ post.url }}" class="post-preview-card" aria-label="Open post {{ post.title }}">
+        <h2>{{ post.title }}</h2>
+        <p class="post-meta">
+            {{ post.date | date: "%B %d, %Y" }}
+            {% if post.source %}• {{ post.source }}{% endif %}
+        </p>
+        {% if post.excerpt %}
+        <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+        {% endif %}
+    </a>
 </article>
-<hr>
 {% endfor %}
