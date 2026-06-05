@@ -6,7 +6,7 @@ permalink: /notes/ml/
 
 # ML Notes
 
-Choose a topic.
+<p class="breadcrumbs"><a href="/notes/">Notes</a> <span class="separator">/</span> <span>ML</span></p>
 
 {% assign topic_keys = "" | split: "" %}
 {% for note in site.notes %}

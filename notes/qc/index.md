@@ -6,7 +6,7 @@ permalink: /notes/qc/
 
 # QC Notes
 
-Choose a topic.
+<p class="breadcrumbs"><a href="/notes/">Notes</a> <span class="separator">/</span> <span>QC</span></p>
 
 {% assign topic_keys = "" | split: "" %}
 {% for note in site.notes %}

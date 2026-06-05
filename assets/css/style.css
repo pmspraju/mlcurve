@@ -219,6 +219,22 @@ hr {
     font-family: 'Work Sans', 'Segoe UI', sans-serif;
 }
 
+.breadcrumbs {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 1.05rem;
+    font-family: 'Work Sans', 'Segoe UI', sans-serif;
+}
+
+.breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-strong);
+}
+
 .excerpt {
     color: var(--text-dim);
     margin: 0.75rem 0;

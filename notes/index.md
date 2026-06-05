@@ -6,8 +6,6 @@ permalink: /notes/
 
 # Notes
 
-Choose a domain to browse focused notes and references.
-
 <div class="post-list">
 <article class="post-preview">
     <a href="/notes/ml/" class="post-preview-card" aria-label="Browse ML notes">
