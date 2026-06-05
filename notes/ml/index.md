@@ -6,6 +6,8 @@ permalink: /notes/ml/
 
 # ML Notes
 
+Choose a topic.
+
 {% assign topic_keys = "" | split: "" %}
 {% for note in site.notes %}
     {% assign note_domain = note.domain | downcase | strip %}
@@ -19,26 +21,21 @@ permalink: /notes/ml/
 
 {% assign topic_keys = topic_keys | sort %}
 
-{% if topic_keys.size > 0 %}
-{% for topic in topic_keys %}
-<h2>{{ topic | replace: "-", " " | capitalize }}</h2>
 <div class="post-list">
-{% for note in site.notes %}
-    {% assign note_domain = note.domain | downcase | strip %}
-    {% assign note_topic = note.topic | downcase | strip %}
-    {% if note_domain == "ml" and note_topic == topic %}
-<article class="post-preview">
-    <a href="{{ note.url }}" class="post-preview-card" aria-label="Open note {{ note.title }}">
-        <h3>{{ note.title }}</h3>
-        {% if note.excerpt %}
-        <p class="excerpt">{{ note.excerpt | strip_html | truncatewords: 30 }}</p>
+{% for topic in topic_keys %}
+    {% assign article_count = 0 %}
+    {% for note in site.notes %}
+        {% assign note_domain = note.domain | downcase | strip %}
+        {% assign note_topic = note.topic | downcase | strip %}
+        {% if note_domain == "ml" and note_topic == topic %}
+            {% assign article_count = article_count | plus: 1 %}
         {% endif %}
+    {% endfor %}
+<article class="post-preview">
+    <a href="/notes/ml/{{ topic | slugify }}/" class="post-preview-card" aria-label="Open topic {{ topic | replace: '-', ' ' | capitalize }}">
+        <h3>{{ topic | replace: "-", " " | capitalize }}</h3>
+        <p class="post-meta">{{ article_count }} article{% if article_count != 1 %}s{% endif %}</p>
     </a>
 </article>
-    {% endif %}
 {% endfor %}
 </div>
-{% endfor %}
-{% else %}
-<p>No ML topics found yet.</p>
-{% endif %}
