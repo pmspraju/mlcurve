@@ -4,8 +4,6 @@ title: QC Notes
 permalink: /notes/qc/
 ---
 
-# QC Notes
-
 <p class="breadcrumbs"><a href="/notes/">Notes</a> <span class="separator">/</span> <span>QC</span></p>
 
 {% assign topic_keys = "" | split: "" %}

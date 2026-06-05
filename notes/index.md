@@ -4,8 +4,6 @@ title: Notes
 permalink: /notes/
 ---
 
-# Notes
-
 <div class="post-list">
 <article class="post-preview">
     <a href="/notes/ml/" class="post-preview-card" aria-label="Browse ML notes">

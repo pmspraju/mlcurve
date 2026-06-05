@@ -4,8 +4,6 @@ title: ML Notes
 permalink: /notes/ml/
 ---
 
-# ML Notes
-
 <p class="breadcrumbs"><a href="/notes/">Notes</a> <span class="separator">/</span> <span>ML</span></p>
 
 {% assign topic_keys = "" | split: "" %}
