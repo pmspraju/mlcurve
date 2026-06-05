@@ -6,27 +6,24 @@
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     {% seo %}
 </head>
-<body class="terminal-theme">
+<body class="reader-theme">
     <header class="site-header">
         <nav class="container">
-            <a href="/" class="logo">mlcurve<span class="cursor">_</span></a>
+            <a href="/" class="logo">mlcurve</a>
             <ul class="nav-links">
                 <li><a href="/blog/">Blog</a></li>
                 <li><a href="/notes/">Notes</a></li>
             </ul>
         </nav>
     </header>
-    
-    <div class="terminal-shell container">
-        <main>
-            <p class="terminal-lead"><span class="prompt">$</span> render --page {{ page.title | downcase | replace: ' ', '-' }}</p>
-            {{ content }}
-        </main>
-    </div>
+
+    <main class="container">
+        {{ content }}
+    </main>
     
     <footer>
         <div class="container">
