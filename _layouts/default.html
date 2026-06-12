@@ -53,6 +53,35 @@
             container.textContent = `$$\n${tex}\n$$`;
             preEl.replaceWith(container);
         });
+
+        // Fallback: if inline LaTeX is accidentally parsed as inline code,
+        // convert it back to inline TeX so MathJax can render it.
+        document.querySelectorAll('.post-content p code, .post-content li code').forEach((codeEl) => {
+            if (codeEl.closest('pre')) {
+                return;
+            }
+
+            const text = codeEl.textContent.trim();
+            const hasLatexCommand = /\\[a-zA-Z]+/.test(text);
+            const hasScript = /[_^]/.test(text);
+            const hasBraces = /[{}]/.test(text);
+            const isUnicodeKet = /^\|\s*[^|]+\s*⟩$/.test(text);
+            const isLikelyLatex = hasLatexCommand || (hasScript && hasBraces) || isUnicodeKet;
+            const looksLikeCodeToken = /^[a-zA-Z0-9_.-]+$/.test(text);
+
+            if (!isLikelyLatex || looksLikeCodeToken) {
+                return;
+            }
+
+            const mathSpan = document.createElement('span');
+            const tex = text
+                .replace(/⟨/g, '\\langle')
+                .replace(/⟩/g, '\\rangle')
+                .replace(/^\$+|\$+$/g, '')
+                .trim();
+            mathSpan.textContent = `\\(${tex}\\)`;
+            codeEl.replaceWith(mathSpan);
+        });
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
