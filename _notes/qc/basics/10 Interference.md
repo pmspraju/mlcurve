@@ -15,7 +15,7 @@ Let's break down quantum interference in a way that connects the math to physica
 
 ## 1. **Interference of Amplitude Probabilities**
 
-Imagine you have two indistinguishable paths by which a quantum event can occur (a classic example being the double-slit experiment). Each path contributes a complex amplitude, say \( $a_1$ \) and \( $a_2$ \), which can be written as:
+Imagine you have two indistinguishable paths by which a quantum event can occur (a classic example being the double-slit experiment). Each path contributes a complex amplitude, say $a_1$ and $a_2$, which can be written as:
 
 ```math
 a_1 = r_1 e^{i\phi_1}, \quad a_2 = r_2 e^{i\phi_2}
@@ -33,13 +33,13 @@ The probability of observing the event is given by:
 P = |a_{\text{total}}|^2 = \left| a_1 + a_2 \right|^2
 ```
 
-Because these amplitudes are complex numbers, their sum depends critically on their magnitudes \( $r_1, r_2$ \) and phases \( $\phi_1, \phi_2$ \). The key here is that the relative phase difference \( $\Delta\phi = \phi_2 - \phi_1$ \) determines how they add.
+Because these amplitudes are complex numbers, their sum depends critically on their magnitudes $r_1, r_2$ and phases $\phi_1, \phi_2$. The key here is that the relative phase difference $\Delta\phi = \phi_2 - \phi_1$ determines how they add.
 
 ---
 
 ## 2. **Constructive Interference**
 
-Constructive interference occurs when the phases of the amplitudes align (or differ by multiples of \( $2\pi$ \)), meaning that the amplitudes add up in phase to give a larger combined amplitude. For example, if
+Constructive interference occurs when the phases of the amplitudes align (or differ by multiples of $2\pi$), meaning that the amplitudes add up in phase to give a larger combined amplitude. For example, if
 
 ```math
 a_1 = r e^{i\theta} \quad \text{and} \quad a_2 = r e^{i\theta},
@@ -63,7 +63,7 @@ which is higher than the probability from either path taken individually. In a p
 
 ## 3. **Destructive Interference**
 
-Destructive interference happens when the amplitudes are out of phase—typically, when they differ by \( $\pi$ \) (i.e., one amplitude is essentially the "negative" of the other). For instance, suppose:
+Destructive interference happens when the amplitudes are out of phase—typically, when they differ by $\pi$ (i.e., one amplitude is essentially the "negative" of the other). For instance, suppose:
 
 ```math
 a_1 = r e^{i\theta} \quad \text{and} \quad a_2 = r e^{i(\theta+\pi)} = -r e^{i\theta},
@@ -111,7 +111,7 @@ Case 2: Δφ = π (Destructive)
          P = 0  → Dark Fringe
 ```
 
-This diagram shows how the phase difference \( $\Delta\phi$ \) is central to determining whether the interference is constructive (resulting in enhanced probability) or destructive (canceling probability).
+This diagram shows how the phase difference $\Delta\phi$ is central to determining whether the interference is constructive (resulting in enhanced probability) or destructive (canceling probability).
 
 ---
 

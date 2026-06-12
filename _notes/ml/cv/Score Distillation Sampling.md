@@ -24,8 +24,8 @@ Rather than directly optimizing the rendered image’s likelihood under the diff
 \nabla_{\mathbf{I}} \log p(\mathbf{I}\mid \mathbf{y}),
 ```
 where:
-- \( $\mathbf{I}$ \) is the rendered image (for instance, from a NeRF), and  
-- \( $\mathbf{y}$ \) is a text prompt or conditioning information.
+- $\mathbf{I}$ is the rendered image (for instance, from a NeRF), and  
+- $\mathbf{y}$ is a text prompt or conditioning information.
 
 By leveraging the pretrained diffusion model as a fixed, differentiable “oracle,” we can compute gradients with respect to the input image. These gradients (or “score estimates”) then backpropagate all the way to the 3D model parameters. In essence, SDS *distills* the diffusion model’s understanding of what makes an image match a given prompt into the 3D generator.
 
@@ -35,19 +35,19 @@ By leveraging the pretrained diffusion model as a fixed, differentiable “oracl
 
 ### 2.1 Diffusion Models and Score Matching
 
-In diffusion models one typically defines a forward process that progressively corrupts an image \( $\mathbf{I}_0$ \) into a noisy image \( $\mathbf{I}_t$ \) at time \( $t$ \) using a known noise schedule. A common reparameterization is:
+In diffusion models one typically defines a forward process that progressively corrupts an image $\mathbf{I}_0$ into a noisy image $\mathbf{I}_t$ at time $t$ using a known noise schedule. A common reparameterization is:
 ```math
 \mathbf{I}_t = \sqrt{\bar{\alpha}_t}\,\mathbf{I}_0 + \sqrt{1-\bar{\alpha}_t}\,\boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{N}(0,\mathbf{I})
 ```
 where
-- \( $\bar{\alpha}_t$ \) is a cumulative noise coefficient (depending on the schedule), and  
-- \( $\boldsymbol{\epsilon}$ \) is drawn from a standard Gaussian distribution.
+- $\bar{\alpha}_t$ is a cumulative noise coefficient (depending on the schedule), and  
+- $\boldsymbol{\epsilon}$ is drawn from a standard Gaussian distribution.
 
-The diffusion (denoising) network \( $\epsilon_\theta(\cdot)$ \) is trained to predict the noise \( $\boldsymbol{\epsilon}$ \) given the noisy image \( $\mathbf{I}_t$ \), time \( $t$ \), and optionally, conditioning signal \( $\mathbf{y}$ \). Its training loss is typically:
+The diffusion (denoising) network $\epsilon_\theta(\cdot)$ is trained to predict the noise $\boldsymbol{\epsilon}$ given the noisy image $\mathbf{I}_t$, time $t$, and optionally, conditioning signal $\mathbf{y}$. Its training loss is typically:
 ```math
 \mathcal{L}_{\text{diff}} = \mathbb{E}_{t,\mathbf{I}_0,\boldsymbol{\epsilon}}\Bigl[\lambda(t)\,\bigl\|\epsilon_\theta\bigl(\mathbf{I}_t,t,\mathbf{y}\bigr)-\boldsymbol{\epsilon}\bigr\|^2\Bigr],
 ```
-where \( $\lambda(t)$ \) is a weight that may depend on the noise level.
+where $\lambda(t)$ is a weight that may depend on the noise level.
 
 Importantly, under score matching theory, the network’s prediction connects to the score (the gradient of the log probability) approximately by:
 ```math
@@ -59,15 +59,15 @@ This expression tells us how to nudge an image in the direction of higher likeli
 
 ### 2.2 The SDS Loss Formulation
 
-When applying SDS to a 3D model, the overall goal is to adjust the 3D parameters \( $\theta$ \) so that the rendered image \( $\mathbf{I} = f_{\theta}(\text{scene})$ \) will have a high conditional probability \( $p(\mathbf{I}\mid \mathbf{y})$ \) under the diffusion model. However, rather than optimizing that likelihood directly, SDS uses the score from the diffusion model as a distillation signal.
+When applying SDS to a 3D model, the overall goal is to adjust the 3D parameters $\theta$ so that the rendered image $\mathbf{I} = f_{\theta}(\text{scene})$ will have a high conditional probability $p(\mathbf{I}\mid \mathbf{y})$ under the diffusion model. However, rather than optimizing that likelihood directly, SDS uses the score from the diffusion model as a distillation signal.
 
 **Step-by-step process:**
 
 1. **Render an Image:**  
-   Generate an image \( $\mathbf{I}$ \) from your current 3D model (e.g., via volumetric rendering in NeRF).
+   Generate an image $\mathbf{I}$ from your current 3D model (e.g., via volumetric rendering in NeRF).
 
 2. **Sample a Random Time and Noise:**  
-   Choose a time \( $t$ \) from the noise schedule (often uniformly) and sample a Gaussian noise vector \( $\boldsymbol{\epsilon}$ \).
+   Choose a time $t$ from the noise schedule (often uniformly) and sample a Gaussian noise vector $\boldsymbol{\epsilon}$.
 
 3. **Create a Noisy Version of the Rendered Image:**  
    Form the noised image
@@ -76,7 +76,7 @@ When applying SDS to a 3D model, the overall goal is to adjust the 3D parameters
 ```
 
 4. **Obtain the Diffusion Model’s Prediction:**  
-   Feed \( $\mathbf{I}_t$ \), \( $t$ \), and text prompt \( $\mathbf{y}$ \) into the pretrained diffusion network:
+   Feed $\mathbf{I}_t$, $t$, and text prompt $\mathbf{y}$ into the pretrained diffusion network:
 ```math
 \hat{\boldsymbol{\epsilon}} = \epsilon_\theta\bigl(\mathbf{I}_t,t,\mathbf{y}\bigr).
 ```
@@ -86,10 +86,10 @@ When applying SDS to a 3D model, the overall goal is to adjust the 3D parameters
 ```math
 \mathcal{L}_{\text{SDS}} = w(t) \,\bigl\|\hat{\boldsymbol{\epsilon}} - \boldsymbol{\epsilon}\bigr\|^2,
 ```
-   where \( $w(t)$ \) is a weight derived from the noise level (for example, proportional to \( $1/\sqrt{1-\bar{\alpha}_t}$ \) or adapted to ensure proper scaling).
+   where $w(t)$ is a weight derived from the noise level (for example, proportional to $1/\sqrt{1-\bar{\alpha}_t}$ or adapted to ensure proper scaling).
 
 6. **Backpropagate via the Rendering Pipeline:**  
-   Since the rendered image \( $\mathbf{I}$ \) is differentiable with respect to the 3D model’s parameters, the gradient of \( $\mathcal{L}_{\text{SDS}}$ \) can be chained back:
+   Since the rendered image $\mathbf{I}$ is differentiable with respect to the 3D model’s parameters, the gradient of $\mathcal{L}_{\text{SDS}}$ can be chained back:
 ```math
 \frac{\partial \mathcal{L}_{\text{SDS}}}{\partial \theta} = \frac{\partial \mathcal{L}_{\text{SDS}}}{\partial \mathbf{I}} \cdot \frac{\partial \mathbf{I}}{\partial \theta}.
 ```
@@ -103,14 +103,14 @@ When applying SDS to a 3D model, the overall goal is to adjust the 3D parameters
   The diffusion model has learned a rich distribution over 2D images conditioned on text. SDS transfers that knowledge to a 3D representation without having any direct 3D supervision. The rendered images are effectively pushed toward regions of high probability in the 2D diffusion model’s learned space.
 
 - **Gradient Signal Through the Score:**  
-  The term \( $\hat{\boldsymbol{\epsilon}} - \boldsymbol{\epsilon}$ \) forms an proxy for the score:
+  The term $\hat{\boldsymbol{\epsilon}} - \boldsymbol{\epsilon}$ forms an proxy for the score:
 ```math
 \nabla_{\mathbf{I}} \log p(\mathbf{I}\mid \mathbf{y}) \approx -\frac{1}{\sqrt{1-\bar{\alpha}_t}}\left(\hat{\boldsymbol{\epsilon}} - \boldsymbol{\epsilon}\right).
 ```
   This means the 3D model is updated in the direction that increases the log probability of its renderings under the diffusion model.
 
 - **Weighting by Noise Level:**  
-  The scale factor \( $w(t)$ \) ensures that samples from different noise levels are balanced appropriately. At high noise levels, the diffusion model’s predictions are less precise, so the gradients may be scaled differently compared to low-noise regimes.
+  The scale factor $w(t)$ ensures that samples from different noise levels are balanced appropriately. At high noise levels, the diffusion model’s predictions are less precise, so the gradients may be scaled differently compared to low-noise regimes.
 
 ---
 
@@ -172,6 +172,6 @@ This technique elegantly distills 2D image priors into a 3D representation and h
 ---
 
 There’s plenty more to explore. For instance, one might consider:
-- How different noise schedules and weighting functions \( $w(t)$ \) affect convergence.
+- How different noise schedules and weighting functions $w(t)$ affect convergence.
 - How the quality of the pretrained diffusion model influences the final 3D output.
 - Ways to extend SDS to handle more complex conditioning (such as multi-view consistency or lighting changes).

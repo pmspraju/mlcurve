@@ -11,6 +11,9 @@ author:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
 theme: minima
 
 # Permalink structure

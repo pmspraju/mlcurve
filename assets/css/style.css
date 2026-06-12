@@ -344,6 +344,11 @@ hr {
     border: 0;
 }
 
+.post-content mjx-container[display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 .post-footer {
     margin-top: 3rem;
     padding-top: 2rem;

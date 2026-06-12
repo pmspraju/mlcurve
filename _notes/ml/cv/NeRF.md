@@ -21,10 +21,10 @@ f: (\mathbf{x}, \mathbf{d}) \rightarrow (\sigma, \mathbf{c})
 ```
 where:
 
-- \( $\mathbf{x} = (x,y,z)$ \) is a point in 3D space.
-- \( $\mathbf{d}$ \) is the viewing direction (usually parameterized by angles like \( $(\theta, \phi)$ \)).
-- \( $\sigma$ \) is the volume density at \( $\mathbf{x}$ \) (think of this as how “opaque” or “dense” the point is).
-- \( $\mathbf{c}$ \) represents the color (RGB) emitted from that point in the direction \( $\mathbf{d}$ \).
+- $\mathbf{x} = (x,y,z)$ is a point in 3D space.
+- $\mathbf{d}$ is the viewing direction (usually parameterized by angles like $(\theta, \phi)$).
+- $\sigma$ is the volume density at $\mathbf{x}$ (think of this as how “opaque” or “dense” the point is).
+- $\mathbf{c}$ represents the color (RGB) emitted from that point in the direction $\mathbf{d}$.
 
 The goal is to recover the appearance and geometry of a scene from a set of 2D images with known camera poses.
 
@@ -38,27 +38,27 @@ To compute the color of a pixel corresponding to a camera ray, NeRF uses a diffe
 ```math
 \mathbf{r}(t) = \mathbf{o} + t \mathbf{d},
 ```
-where \( $\mathbf{o}$ \) is the camera origin, and \( $\mathbf{d}$ \) is the ray’s direction. The color \( $C(\mathbf{r})$ \) seen along this ray is given by integrating the contributions of all points along the ray:
+where $\mathbf{o}$ is the camera origin, and $\mathbf{d}$ is the ray’s direction. The color $C(\mathbf{r})$ seen along this ray is given by integrating the contributions of all points along the ray:
 ```math
 C(\mathbf{r}) = \int_{t_n}^{t_f} T(t) \, \sigma(\mathbf{r}(t)) \, \mathbf{c}(\mathbf{r}(t), \mathbf{d}) \, dt.
 ```
-Here, the *transmittance* \( $T(t)$ \) is defined as
+Here, the *transmittance* $T(t)$ is defined as
 ```math
 T(t) = \exp\left(-\int_{t_n}^{t} \sigma(\mathbf{r}(s)) \, ds\right),
 ```
-which represents the probability that light travels from the camera to \( $t$ \) without being absorbed.
+which represents the probability that light travels from the camera to $t$ without being absorbed.
 
 ### **2.2 Discretization**
 
 Because exact integration is intractable, NeRF approximates the integral by sampling points along the ray:
-1. **Divide the interval** \( $[t_n, t_f]$ \) into \( $N$ \) segments with sample positions \( $t_1, t_2, \ldots, t_N$ \).  
-2. **Compute associated distances** \( $\delta_i = t_{i+1} - t_i$ \).
+1. **Divide the interval** $[t_n, t_f]$ into $N$ segments with sample positions $t_1, t_2, \ldots, t_N$.  
+2. **Compute associated distances** $\delta_i = t_{i+1} - t_i$.
 
-At each sample \( $i$ \), the network predicts:
-- \( $\sigma_i = \sigma(\mathbf{r}(t_i))$ \),
-- \( $\mathbf{c}_i = \mathbf{c}(\mathbf{r}(t_i), \mathbf{d})$ \).
+At each sample $i$, the network predicts:
+- $\sigma_i = \sigma(\mathbf{r}(t_i))$,
+- $\mathbf{c}_i = \mathbf{c}(\mathbf{r}(t_i), \mathbf{d})$.
 
-Then the accumulated transmittance up to sample \( $i$ \) is approximated as:
+Then the accumulated transmittance up to sample $i$ is approximated as:
 ```math
 T_i = \exp\left(-\sum_{j=1}^{i-1} \sigma_j \, \delta_j\right),
 ```
@@ -66,7 +66,7 @@ and the final pixel color is computed as:
 ```math
 \hat{C}(\mathbf{r}) \approx \sum_{i=1}^{N} T_i \, \left(1 - \exp(-\sigma_i \, \delta_i)\right) \, \mathbf{c}_i.
 ```
-The term \( $1 - \exp(-\sigma_i\,\delta_i)$ \) represents the probability that the ray “terminates” at sample \( $i$ \) by interacting with some matter (i.e., being absorbed or scattered).
+The term $1 - \exp(-\sigma_i\,\delta_i)$ represents the probability that the ray “terminates” at sample $i$ by interacting with some matter (i.e., being absorbed or scattered).
 
 ---
 
@@ -80,13 +80,13 @@ Raw 3D coordinates aren’t ideal for capturing high-frequency details. NeRF emp
 ```math
 \gamma(p) = \left[\sin(2^0 \pi p), \cos(2^0 \pi p), \sin(2^1 \pi p), \cos(2^1 \pi p), \dots, \sin(2^{L-1} \pi p), \cos(2^{L-1} \pi p)\right]
 ```
-For a 3D point \( $\mathbf{x}$ \), this encoding is applied to each coordinate separately and then concatenated. A similar encoding can be applied to the viewing direction \( $\mathbf{d}$ \).
+For a 3D point $\mathbf{x}$, this encoding is applied to each coordinate separately and then concatenated. A similar encoding can be applied to the viewing direction $\mathbf{d}$.
 
 ### **3.2 Two-Stage MLP Structure**
 
 A common design divides the process into two stages:
-- **Geometry Network:** Processes the positional-encoded \( $\mathbf{x}$ \) to compute the density \( $\sigma$ \) and an intermediate feature vector.
-- **Color Network:** Combines the intermediate features with the positional-encoded viewing direction \( $\mathbf{d}$ \) to output \( $\mathbf{c}$ \).
+- **Geometry Network:** Processes the positional-encoded $\mathbf{x}$ to compute the density $\sigma$ and an intermediate feature vector.
+- **Color Network:** Combines the intermediate features with the positional-encoded viewing direction $\mathbf{d}$ to output $\mathbf{c}$.
 
 An ASCII diagram of the pipeline might look like:
 
@@ -135,7 +135,7 @@ Both the coarse and fine networks are trained jointly by backpropagating this lo
 
 ## 6. **Putting It All Together**
 
-1. **Scene Representation:** The scene is represented as a continuous function \( $f(\mathbf{x}, \mathbf{d})$ \) using an MLP, with positional encodings facilitating the learning of high-frequency details.
+1. **Scene Representation:** The scene is represented as a continuous function $f(\mathbf{x}, \mathbf{d})$ using an MLP, with positional encodings facilitating the learning of high-frequency details.
 2. **Ray Marching:** For each pixel, construct a ray and sample points along it.
 3. **Volume Rendering:** Use the predicted density and color values from the MLP to integrate along the ray and compute the pixel color.
 4. **Hierarchical Sampling:** Improve efficiency by first approximating where the important contributions lie and then refining the sampling in those regions.
