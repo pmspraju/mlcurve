@@ -17,6 +17,10 @@ title: Latest
             <span class="separator">•</span>
             <span>{{ latest.source }}</span>
             {% endif %}
+            <span class="separator">•</span>
+            <a class="meta-back-link" href="/blog/" aria-label="Back to posts list">
+                <span aria-hidden="true">&#x21A9;</span>
+            </a>
         </div>
     </header>
 
