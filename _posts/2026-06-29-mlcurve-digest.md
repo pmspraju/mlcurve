@@ -78,13 +78,13 @@ _Source: openai | Published: 2026-06-25T02:00:00+00:00 | Score: 30.0 | ✨ AI-en
 
 5. [Talos: Scaling rare disease diagnosis with automated, iterative genomic reanalysis](https://www.microsoft.com/en-us/research/blog/talos-scaling-rare-disease-diagnosis-with-automated-iterative-genomic-reanalysis/)
 
-<p>Talos was built to help resolve a major bottleneck in genomic medicine: human review time. The open-source system recovered 90% of in-scope diagnoses while surfacing just 1.3 candidate variants per patient for expert review. </p> <p>The post <a href="https://www.microsoft.com/en-us/research/blog/talos-scaling-rar...
+Talos was built to help resolve a major bottleneck in genomic medicine: human review time. The open-source system recovered 90% of in-scope diagnoses while surfacing just 1.3 candidate variants per patient for expert review. 
 
 _Source: microsoft-research | Published: 2026-06-24T14:00:14+00:00 | Score: 30.0_
 
 6. [Ire identifies another LOTUSLITE specimen](https://www.microsoft.com/en-us/research/blog/ire-identifies-another-lotuslite-specimen/)
 
-<p>Project Ire examined a timely malware sample and determined its intent through reverse engineering—identifying LOTUSLITE characteristics even as most major EDR tools did not detect it.</p> <p>The post <a href="https://www.microsoft.com/en-us/research/blog/ire-identifies-another-lotuslite-specimen/">Ire identifies...
+Project Ire examined a timely malware sample and determined its intent through reverse engineering—identifying LOTUSLITE characteristics even as most major EDR tools did not detect it.
 
 _Source: microsoft-research | Published: 2026-06-12T20:30:48+00:00 | Score: 30.0_
 

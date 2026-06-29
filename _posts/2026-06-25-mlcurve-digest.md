@@ -41,7 +41,7 @@ _Source: llm | Published: 2026-06-19T13:24:44+00:00 | Score: 17.54 | Stars: 677_
 ## Research and Company Updates
 1. [Talos: Scaling rare disease diagnosis with automated, iterative genomic reanalysis](https://www.microsoft.com/en-us/research/blog/talos-scaling-rare-disease-diagnosis-with-automated-iterative-genomic-reanalysis/)
 
-<p>Talos was built to help resolve a major bottleneck in genomic medicine: human review time. The open-source system recovered 90% of in-scope diagnoses while surfacing just 1.3 candidate variants per patient for expert review. </p> <p>The post <a href="https://www.microsoft.com/en-us/research/blog/talos-scaling-rar...
+Talos was built to help resolve a major bottleneck in genomic medicine: human review time. The open-source system recovered 90% of in-scope diagnoses while surfacing just 1.3 candidate variants per patient for expert review. 
 
 _Source: microsoft-research | Published: 2026-06-24T14:00:14+00:00 | Score: 50.0_
 

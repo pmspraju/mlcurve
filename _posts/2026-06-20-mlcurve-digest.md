@@ -95,7 +95,7 @@ _Source: huggingface | Published: 2026-06-18T00:00:00+00:00 | Score: 34.0_
 
 10. [Ire identifies another LOTUSLITE specimen](https://www.microsoft.com/en-us/research/blog/ire-identifies-another-lotuslite-specimen/)
 
-<p>Project Ire examined a timely malware sample and determined its intent through reverse engineering—identifying LOTUSLITE characteristics even as most major EDR tools did not detect it.</p> <p>The post <a href="https://www.microsoft.com/en-us/research/blog/ire-identifies-another-lotuslite-specimen/">Ire identifies...
+Project Ire examined a timely malware sample and determined its intent through reverse engineering—identifying LOTUSLITE characteristics even as most major EDR tools did not detect it.
 
 _Source: microsoft-research | Published: 2026-06-12T20:30:48+00:00 | Score: 30.0_
 

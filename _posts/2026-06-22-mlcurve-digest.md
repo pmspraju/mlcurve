@@ -65,19 +65,19 @@ _Source: openai | Published: 2026-06-18T11:00:00+00:00 | Score: 30.0_
 
 5. [Ire identifies another LOTUSLITE specimen](https://www.microsoft.com/en-us/research/blog/ire-identifies-another-lotuslite-specimen/)
 
-<p>Project Ire examined a timely malware sample and determined its intent through reverse engineering—identifying LOTUSLITE characteristics even as most major EDR tools did not detect it.</p> <p>The post <a href="https://www.microsoft.com/en-us/research/blog/ire-identifies-another-lotuslite-specimen/">Ire identifies...
+Project Ire examined a timely malware sample and determined its intent through reverse engineering—identifying LOTUSLITE characteristics even as most major EDR tools did not detect it.
 
 _Source: microsoft-research | Published: 2026-06-12T20:30:48+00:00 | Score: 30.0_
 
 6. [Data Formulator 0.7: AI-powered data analytics for enterprise data](https://www.microsoft.com/en-us/research/blog/data-formulator-0-7-ai-powered-data-analytics-for-enterprise-data/)
 
-<p>Data Formulator introduces AI-powered analytics for enterprise data workflows. Data teams can easily bring enterprise data into an AI-ready workspace where users can explore, analyze, and visualize data with AI agents to turn raw data into actionable insights.</p> <p>The post <a href="https://www.microsoft.com/en...
+Data Formulator introduces AI-powered analytics for enterprise data workflows. Data teams can easily bring enterprise data into an AI-ready workspace where users can explore, analyze, and visualize data with AI agents to turn raw data into actionable insights.
 
 _Source: microsoft-research | Published: 2026-05-28T16:00:00+00:00 | Score: 30.0_
 
 7. [Extending Human Intelligence Through AI](https://www.microsoft.com/en-us/research/blog/extending-human-intelligence-through-ai/)
 
-<p>Understanding AI as an extension of human intelligence—not a replacement for it—offers a more grounded path for building trustworthy AI systems.</p> <p>The post <a href="https://www.microsoft.com/en-us/research/blog/extending-human-intelligence-through-ai/">Extending Human Intelligence Through AI</a> appeared fir...
+Understanding AI as an extension of human intelligence—not a replacement for it—offers a more grounded path for building trustworthy AI systems.
 
 _Source: microsoft-research | Published: 2026-05-27T16:00:00+00:00 | Score: 30.0_
 

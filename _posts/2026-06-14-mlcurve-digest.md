@@ -95,7 +95,7 @@ _Source: openai | Published: 2026-06-04T00:00:00+00:00 | Score: 30.0_
 
 10. [Data Formulator 0.7: AI-powered data analytics for enterprise data](https://www.microsoft.com/en-us/research/blog/data-formulator-0-7-ai-powered-data-analytics-for-enterprise-data/)
 
-<p>Data Formulator introduces AI-powered analytics for enterprise data workflows. Data teams can easily bring enterprise data into an AI-ready workspace where users can explore, analyze, and visualize data with AI agents to turn raw data into actionable insights.</p> <p>The post <a href="https://www.microsoft.com/en...
+Data Formulator introduces AI-powered analytics for enterprise data workflows. Data teams can easily bring enterprise data into an AI-ready workspace where users can explore, analyze, and visualize data with AI agents to turn raw data into actionable insights.
 
 _Source: microsoft-research | Published: 2026-05-28T16:00:00+00:00 | Score: 30.0_
 
