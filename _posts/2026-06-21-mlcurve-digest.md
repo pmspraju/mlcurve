@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-21
-
 ## TL;DR
 - eve is gaining traction (1886 stars, score 41.72).
 - agent-apprenticeship is gaining traction (539 stars, score 24.78).

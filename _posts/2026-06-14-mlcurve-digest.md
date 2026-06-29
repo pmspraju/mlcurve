@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-14
-
 ## TL;DR
 - JoyAI-Echo is gaining traction (762 stars, score 19.24).
 - ai-coding-starter-kit is gaining traction (261 stars, score 19.22).

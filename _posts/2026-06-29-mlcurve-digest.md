@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-29
-
 ## TL;DR
 - video-production-skills is gaining traction (366 stars, score 21.32).
 - Godcoder is gaining traction (245 stars, score 18.9).

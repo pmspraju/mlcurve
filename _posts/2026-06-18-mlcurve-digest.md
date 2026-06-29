@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-18
-
 ## TL;DR
 - ponytail is gaining traction (32592 stars, score 104.0).
 - eve is gaining traction (822 stars, score 30.44).

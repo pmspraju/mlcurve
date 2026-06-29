@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-27
-
 ## TL;DR
 - video-production-skills is gaining traction (232 stars, score 28.64).
 - awesome-evals is gaining traction (474 stars, score 23.48).

@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-28
-
 ## TL;DR
 - theeleven is gaining traction (646 stars, score 26.92).
 - video-production-skills is gaining traction (340 stars, score 20.8).

@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-20
-
 ## TL;DR
 - eve is gaining traction (1665 stars, score 37.3).
 - junction is gaining traction (513 stars, score 24.26).

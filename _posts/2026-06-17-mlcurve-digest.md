@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-17
-
 ## TL;DR
 - ponytail is gaining traction (26364 stars, score 104.0).
 - omnigent is gaining traction (2926 stars, score 62.52).

@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-26
-
 ## TL;DR
 - awesome-evals is gaining traction (326 stars, score 20.52).
 - Good-Badminton is gaining traction (523 stars, score 14.46).

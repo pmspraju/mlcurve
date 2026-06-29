@@ -5,8 +5,6 @@ layout: post
 source: mlcurve-digest
 ---
 
-# MLCurve Digest - 2026-06-23
-
 ## TL;DR
 - zhengxi-views is gaining traction (706 stars, score 28.12).
 - agent-apprenticeship is gaining traction (692 stars, score 17.84).
