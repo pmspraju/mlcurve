@@ -1,5 +1,3 @@
-# AI Signal Briefing - 2026-06-30
-
 ## TL;DR
 - theeleven is gaining traction (715 stars, score 18.3).
 - ESEILANE is gaining traction (135 stars, score 16.7).
