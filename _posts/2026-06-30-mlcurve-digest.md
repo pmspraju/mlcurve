@@ -1,3 +1,10 @@
+---
+title: "MLCurve Digest - 2026-06-30"
+date: 2026-06-30 03:35:46 +0000
+layout: post
+source: mlcurve-digest
+---
+
 ## TL;DR
 - theeleven is gaining traction (715 stars, score 18.3).
 - ESEILANE is gaining traction (135 stars, score 16.7).
