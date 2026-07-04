@@ -98,13 +98,13 @@ _Source: openai | Published: 2026-06-30T00:00:00+00:00 | Score: 30.0_
 
 8. [Memora: A Harmonic Memory Representation Balancing Abstraction and Specificity](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/)
 
-<p>AI agents can't remember past conversations. They must constantly reload or retrieve context, which grows less efficient as tasks get longer and more complex. Memora solves this with a scalable memory system separating what’s stored from how it's retrieved.</p> <p>The post <a href="https://www.microsoft.com/en-us...
+AI agents cannot remember past conversations efficiently, so they must repeatedly reload context as tasks grow. Memora proposes a scalable memory system that separates what is stored from how it is retrieved.
 
 _Source: microsoft-research | Published: 2026-06-29T21:14:22+00:00 | Score: 30.0_
 
 9. [Understanding the brain with AI-driven explanations and experiments](https://www.microsoft.com/en-us/research/blog/understanding-the-brain-with-ai-driven-explanations-and-experiments/)
 
-<p>Researchers introduce generative causal testing, which translates black box models into clear hypotheses and verifies them in the scanner, revealing what specific brain regions respond to in language.</p> <p>The post <a href="https://www.microsoft.com/en-us/research/blog/understanding-the-brain-with-ai-driven-exp...
+Researchers introduce generative causal testing, which translates black-box models into testable hypotheses and verifies them with brain-scanner experiments to reveal language-related neural responses.
 
 _Source: microsoft-research | Published: 2026-06-25T16:00:00+00:00 | Score: 30.0_
 
